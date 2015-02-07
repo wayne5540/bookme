@@ -1,0 +1,2 @@
+module Kids::BookListsHelper
+end

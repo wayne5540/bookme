@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :kids do
+    resources :book_lists
+  end
+
   root "pages#home"
 
   devise_for :users

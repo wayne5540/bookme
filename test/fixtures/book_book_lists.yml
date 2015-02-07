@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  book_list_id: 1
+  book_id: 1
+
+two:
+  book_list_id: 1
+  book_id: 1
+
+# == Schema Information
+#
+# Table name: book_book_lists
+#
+#  id           :integer          not null, primary key
+#  book_list_id :integer
+#  book_id      :integer
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+# Indexes
+#
+#  index_book_book_lists_on_book_id       (book_id)
+#  index_book_book_lists_on_book_list_id  (book_list_id)
+#

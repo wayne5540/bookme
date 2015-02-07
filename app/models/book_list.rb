@@ -1,5 +1,7 @@
 class BookList < ActiveRecord::Base
   belongs_to :user
+  has_many :book_book_lists
+  has_many :books, through: :book_book_lists
 end
 
 # == Schema Information

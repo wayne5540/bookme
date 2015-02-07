@@ -1,4 +1,6 @@
 class Book < ActiveRecord::Base
+  has_many :category_books
+  has_many :categories, through: :category_books
 end
 
 # == Schema Information

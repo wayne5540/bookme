@@ -1,0 +1,35 @@
+<div class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to("Book.Me", root_path, :class => "navbar-brand") %>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to("Books", "#") %></li>
+      <li><%= link_to("Friends", "#") %></li>
+      <li class="dropdown">
+
+        <% if current_user %>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %><b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to("Log Out", destroy_user_session_path, :method => :delete ) %></li>
+            <li class="divider"></li>
+            <li>Link divid</li>
+            <li><%= link_to("Test", "#") %></li>
+            <li><%= link_to("Test", "#") %></li>
+            <li><%= link_to("Test", "#") %></li>
+          </ul>
+        
+        <% else %>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to("Sing Up", new_user_registration_path ) %></li>
+            <li class="divider"></li>
+            <li><%= link_to("Sign In", new_user_session_path ) %></li>
+            <li></li>
+          </ul>
+        <% end %>
+
+      </li>
+    </ul>
+  </div>
+</div>

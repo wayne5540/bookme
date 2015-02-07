@@ -189,7 +189,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  annotate
+  annotate (~> 2.6.5)
   better_errors
   binding_of_caller
   coffee-rails (~> 4.0.0)

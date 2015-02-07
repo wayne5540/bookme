@@ -52,7 +52,7 @@ group :development do
   gem "binding_of_caller"
 
   # improvement
-  gem "annotate"
+  gem 'annotate', '~> 2.6.5'
 
 end
 

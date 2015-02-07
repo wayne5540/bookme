@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery
+//= require lib/underscore
+//= require lib/backbone
+//= require lib/marionette
+//= require lib/bootstrap
 //= require bootstrap-sprockets
 //= require_tree .

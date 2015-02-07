@@ -1,0 +1,25 @@
+
+
+## User Stories
+
+- User can choose a level and we record the level to user
+- User can add preferences, preferences will be related to books category
+- User can add booklist for themselves
+- User can add book into his/her book list (maybe at book page, add a add btn)
+
+
+## TODO
+
+v Login system
+- Pare
+- Build Level system
+- Build Book and Category (many-to-many)
+  - Categories are preference
+- BookList CRUD for user
+- Book page
+- Book Comments system
+- Gamification system (points)
+  - trigger time:
+    - kid comments a book
+    - kid add book to book list
+

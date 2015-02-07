@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   namespace :kids do
+    root "book_lists#index"
     resources :book_lists
   end
 

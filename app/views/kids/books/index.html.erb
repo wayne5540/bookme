@@ -1,0 +1,31 @@
+<h1>Books</h1>
+  <ul>
+    <% @books.each do |book| %>
+      <li>
+        <%= link_to(book.title, 'books/' + book.id.to_s) %></a> by <%= book.author %>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-id= <%= book.id%> >
+            Add to my booklist
+          </button>
+          <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Book Lists</h4>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for(book, url: add_to_book_list_kids_book_path(book), method: :post) do |f| %>
+          <%= f.association :book_lists, as: :check_boxes, label_method: :title  %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= f.submit "Add", class: "btn  btn-primary" %>
+      </div>
+      <% end %>  
+    </div>
+  </div>
+</div>
+      </li>
+    <% end %>
+  </ul>

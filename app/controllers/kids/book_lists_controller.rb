@@ -4,7 +4,7 @@ class Kids::BookListsController < KidsBaseController
 
   def index
     @book_lists = current_user.book_lists.recent
-    render json: @book_lists, each_serializer: BookListSerializer
+    # render json: @book_lists, each_serializer: BookListSerializer
   end
 
   def new
@@ -37,6 +37,26 @@ class Kids::BookListsController < KidsBaseController
   end
 
   def destroy
+  end
+
+  def add_to_book_list
+    book_params[:book_list_ids]
+    @book.update_attributes(book_params)
+
+    book_list_ids = book_params[:book_list_ids].select(&:present?)
+    book_lists = BookList.where(:id => book_list_ids)
+    book_lists.each do |book_list|
+      user_book = UserBook.where(:user_id => book_list.user_id).first
+      if user_book.blank?
+        ub = @book.user_books.build
+        ub.user_id = book_list.user_id
+        ub.save
+      end
+    end
+
+    # Check to add point here.
+
+    redirect_to kids_book_path(@book)
   end
 
   private

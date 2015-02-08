@@ -2,7 +2,7 @@ BookMe.module('BooksApp.List', function(List, App, Backbone, Marionette, $, _){
   'use strict';
 
   List.Layout = Marionette.LayoutView.extend({
-    template: 'books/list-layout',
+    template: JST['books/list-layout'],
     regions: {
       availableBooksRegion:         '#available-books-region',
       finishedBooksRegion:          '#finished-books-region'
@@ -10,7 +10,7 @@ BookMe.module('BooksApp.List', function(List, App, Backbone, Marionette, $, _){
   });
 
   List.Books = Marionette.ItemView.extend({
-    template: 'books/list-item',
+    template: JST['books/list-item'],
     tagName: 'tr',
     events: {'click': 'showPaperClicked'}
   });
@@ -20,11 +20,11 @@ BookMe.module('BooksApp.List', function(List, App, Backbone, Marionette, $, _){
     this.trigger('book:show', this.model);
   }; 
     
-  List.Papers = Marionette.CompositeView.extend({
+  List.Books = Marionette.CompositeView.extend({
     tagName:            'table',
     className:          'table books-list',
-    template:           'books/list-heading',
-    childView:          List.Book,
+    template:           JST['books/list-heading'],
+    childView:          List.Books,
     childViewContainer: 'tbody'
   });
 });

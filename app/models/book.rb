@@ -10,7 +10,7 @@ class Book < ActiveRecord::Base
 
   has_many :reviews
 
-  scope :available, ->(user_id) { includes(:user_books).where("user_books.user_id = ?", user_id).where("user_books.completed = ?", false) }
+  scope :available, ->(user_id) { joins(:user_books).where("user_books.user_id = ?", user_id).where("user_books.completed = ?", false) }
 end
 
 # == Schema Information

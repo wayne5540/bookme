@@ -9,7 +9,7 @@ BookMe.module('BooksApp.List', function(List, App, Backbone, Marionette, $, _){
     }
   });
 
-  List.Books = Marionette.ItemView.extend({
+  List.Book = Marionette.ItemView.extend({
     template: JST['books/list-item'],
     tagName: 'tr',
     events: {'click': 'showPaperClicked'}
@@ -24,7 +24,7 @@ BookMe.module('BooksApp.List', function(List, App, Backbone, Marionette, $, _){
     tagName:            'table',
     className:          'table books-list',
     template:           JST['books/list-heading'],
-    childView:          List.Books,
+    childView:          List.Book,
     childViewContainer: 'tbody'
   });
 });

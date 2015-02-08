@@ -21,7 +21,8 @@ module BookMe
     # config.i18n.default_locale = :de
 
     config.autoload_paths += [
-      "#{config.root}/app/services"
+      "#{config.root}/app/services",
+      "#{config.root}/app/serializers"
     ]
   end
 end

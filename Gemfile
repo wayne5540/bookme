@@ -45,6 +45,7 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem "simple_form", "~> 3.1.0.rc1"
 gem "font-awesome-rails"
 gem "devise"
+gem "active_model_serializers"
 
 
 group :development do

@@ -1,20 +1,16 @@
 <div class="row">
-<!--   <div class="col-md-3 thumbnail">
-    <div class="big-btn"></div>
-  </div> -->
-
-    
-
-  <form action="/kids/categories" method="post">
-    <div data-toggle="buttons">
-    <%= token_tag %>
-    <% @categories.each do |category| %>
-      <label class="btn btn-success">
-        <input type="checkbox" name="book[book_list_ids][]" autocomplete="off" value="<%= category.id %>"> <%= category.name %>
-      </label>
-    <% end %>
+  <% @categories.each do |category| %>
+    <div class="col-xs-6 col-md-3">
+      <a href=<%= kids_levels_path %>>
+        <div class="thumbnail big-btn">
+          <span class="level-label"><%= category.name %></span>
+        </div>
+      </a>
     </div>
-    <input class="btn btn-default" name="commit" type="submit" value="Go find books" />
-  </form>
-    
+  <% end %>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <%= link_to("Go next >", kids_levels_path, class: "btn btn-default btn-lg pull-right") %>
+  </div>
 </div>

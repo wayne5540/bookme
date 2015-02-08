@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   namespace :kids do
     root "book_lists#index"
+
+    resources :categories
     resources :book_lists
     resources :books do
       member do

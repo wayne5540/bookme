@@ -1,0 +1,2 @@
+module Kids::CategoriesHelper
+end

@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+
+.custom-devise-form {
+  padding-top: 150px;
+}

@@ -16,6 +16,14 @@ category_2 = Category.create(
   }
 )
 
+category_2 = Category.create(
+  {
+    name: "Animals",
+    description: "Animals"
+  }
+)
+
+
 book_list_1 = BookList.create(
   {
     title: "Wish to read",

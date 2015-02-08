@@ -2,6 +2,26 @@
   <div id="main-region"></div>
 </div>
 
+<!-- Header -->
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <img class="img-responsive" style="width:30%;" src=<%= image_path("wizard-illustration.png") %> alt="">
+                <div class="intro-text">
+                    <span class="name">
+                      <a href=<%= kids_categories_path %> style="color: white; text-decoration: underline;">Hi! I’m Ollivander</a>
+                    </span>
+                    <hr class="star-light">
+                    <span class="skills">
+                       <a href=<%= kids_categories_path %> style="color: white; text-decoration: underline;">LET ME HELP YOUR NEXT BOOK FIND YOU!</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
 <%= javascript_tag do %>
     $(document).ready(function(){
       BookMe.start();

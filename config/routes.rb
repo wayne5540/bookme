@@ -26,5 +26,8 @@ Rails.application.routes.draw do
 
   root "pages#home"
 
+  get "parents", to: "pages#parent"
+  get "teachers", to: "pages#teacher"
+
   devise_for :users
 end

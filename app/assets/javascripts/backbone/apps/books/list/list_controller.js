@@ -12,7 +12,7 @@ BookMe.module("BooksApp.List", function(List, App, Backbone, Marionette, $, _) {
             collection: new BookMe.Collections.Books(books)
           });
 
-          var finishedBooksView = new List.Books({
+          var myBooksView = new List.Books({
             collection: new BookMe.Collections.Books(books)
           });
 
@@ -20,13 +20,13 @@ BookMe.module("BooksApp.List", function(List, App, Backbone, Marionette, $, _) {
             return App.trigger("book:show", model.id);
           });
 
-          finishedBooksView.on("childview:book:show", function(childview, model) {
+          myBooksView.on("childview:book:show", function(childview, model) {
             return App.trigger("book:show", model.id);
           });
 
           listLayout.on("show", function() {
             listLayout.availableBooksRegion.show(availableBooksView);
-            return listLayout.finishedBooksRegion.show(finishedBooksView);
+            return listLayout.myBooksRegion.show(myBooksView);
           });
 
           return App.mainRegion.show(listLayout);

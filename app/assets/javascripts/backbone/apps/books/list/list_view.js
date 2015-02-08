@@ -5,7 +5,7 @@ BookMe.module('BooksApp.List', function(List, App, Backbone, Marionette, $, _){
     template: JST['books/list-layout'],
     regions: {
       availableBooksRegion:         '#available-books-region',
-      finishedBooksRegion:          '#finished-books-region'
+      myBooksRegion:          '#my-books-region'
     }
   });
 

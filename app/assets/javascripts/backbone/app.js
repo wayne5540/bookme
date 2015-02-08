@@ -16,11 +16,6 @@ this.BookMe = (function(Backbone, Marionette) {
     if (Backbone.history) {
       Backbone.history.start();
       App.BooksApp.start();
-      if (Backbone.history.fragment === '') {
-        return App.trigger('books:list');
-      } else {
-        return console.log('Cannot start app.');
-      }
     }
   });
   return App;

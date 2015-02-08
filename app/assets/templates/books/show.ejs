@@ -1,0 +1,47 @@
+<a class='back' href="/#students/papers">
+  <div class="glyphicon glyphicon-chevron-left"></div>
+  back
+</a>
+<h4 class="prompt">
+  <%= @prompt %><br/>
+</h4>
+<table class='table table-nonfluid paper-show'>
+  <tr>
+    <th>Editor</th>
+    <td class='editor-name'><%= @editor_name %></td>
+  </tr>
+  <tr>
+    <th>Word Count</th>
+    <td class='word-count'><%= @word_count%></td>
+  </tr>
+  <tr>
+    <th>Due Date</th>
+    <td class='due-date'>
+      <%= moment(@edit_by_date).format('LLL') %>
+    </td>
+  </tr>
+  <tr>
+    <th>Notes</th>
+    <td class='notes'>
+      <%= @notes %>
+    </td>
+  </tr>
+  <tr>
+    <th>All Drafts</th>
+    <td class='revisions'>
+      <% i = 0 %>
+      <% for revision in @revisions: %>
+        <% if @revisions.length is 1: %>
+          <button class="revision selected" data-revision-id="<%= revision.id %>">Original Paper</button>
+        <% else if i is 0: %>
+          <button class="revision" data-revision-id="<%= revision.id %>">Original Paper</button>
+        <% else if i is @revisions.length - 1 : %>
+          <button class="revision selected" data-revision-id="<%= revision.id %>" data-prev-revision-id="<%= @revisions[i-1].id %>">Revision #<%= i %></button>
+        <% else: %>
+          <button class="revision" data-revision-id="<%= revision.id %>" data-prev-revision-id="<%= @revisions[i-1].id %>">Revision #<%= i %></button>
+        <% end %>
+        <% i = i + 1 %>
+      <% end %>
+    </td>
+  </tr>
+</table>

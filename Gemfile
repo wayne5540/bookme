@@ -47,6 +47,9 @@ gem "font-awesome-rails"
 gem "devise"
 gem "active_model_serializers"
 
+group :assets do
+  gem 'ejs'
+end
 
 group :development do
   # debug

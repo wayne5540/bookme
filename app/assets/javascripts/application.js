@@ -16,4 +16,10 @@
 //= require lib/backbone
 //= require lib/marionette
 //= require bootstrap-sprockets
+//= require_tree ./backbone/config
+//= require_tree ./backbone/regions
+//= require_tree ../templates
+//= require ./backbone/app
+//= require_tree ./backbone/models
+//= require_tree ./backbone/apps
 //= require_tree .

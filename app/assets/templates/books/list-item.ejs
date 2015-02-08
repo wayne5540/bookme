@@ -1,0 +1,13 @@
+<td class='prompt'>
+  <%= if @prompt.length > 40 then @prompt.slice(0,40) + '...' else @prompt %>
+</td>
+<td class='edit-by-date'>
+  <%= moment(@edit_by_date).format('ddd, MMM DD') %>
+</td>
+<td class='editor-name'>
+  <% if @editor_name: %>
+    <%= @editor_name %>
+  <% else: %>
+    <span class="no-editor">Looking for Editor</span>
+  <% end %>
+</td>

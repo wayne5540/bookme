@@ -1,2 +1,9 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div id="content">
+  <div id="main-region"></div>
+</div>
+
+<%= javascript_tag do %>
+    $(document).ready(function(){
+      BookMe.start();
+    });
+<% end %>

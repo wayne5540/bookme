@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150208015834) do
+ActiveRecord::Schema.define(version: 20150208035338) do
 
   create_table "book_book_lists", force: true do |t|
     t.integer  "book_list_id"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20150208015834) do
     t.string   "author"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "img_url"
   end
 
   create_table "categories", force: true do |t|
@@ -105,6 +106,7 @@ ActiveRecord::Schema.define(version: 20150208015834) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "point",                  default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

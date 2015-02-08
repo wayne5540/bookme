@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
+
   namespace :kids do
     root "book_lists#index"
     resources :book_lists
-    resources :books
+    resources :books do
+      member do
+        post :add_review
+        post :add_to_book_list
+      end
+      resources :reviews
+    end
   end
 
   root "pages#home"

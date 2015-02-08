@@ -12,6 +12,11 @@ class User < ActiveRecord::Base
 
   has_many :user_categories
   has_many :preferences, through: :user_categories, source: :category
+
+  def add_point!(amount)
+    self.point += amount
+    self.save
+  end
 end
 
 # == Schema Information
@@ -31,6 +36,7 @@ end
 #  last_sign_in_ip        :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
+#  point                  :integer          default(0)
 #
 # Indexes
 #

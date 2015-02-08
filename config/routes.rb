@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   namespace :kids do
+  get 'levels/index'
+  end
+
+  namespace :kids do
     root "book_lists#index"
 
     resources :categories do
@@ -16,6 +20,8 @@ Rails.application.routes.draw do
       end
       resources :reviews
     end
+
+    resources :levels, only: [:index]
   end
 
   root "pages#home"

@@ -1,6 +1,20 @@
 <div class="row">
-  <div class="col-md-3 thumbnail">
+<!--   <div class="col-md-3 thumbnail">
     <div class="big-btn"></div>
-  </div>
+  </div> -->
+
+    
+
+  <form action="/kids/categories" method="post">
+    <div data-toggle="buttons">
+    <%= token_tag %>
+    <% @categories.each do |category| %>
+      <label class="btn btn-success">
+        <input type="checkbox" name="book[book_list_ids][]" autocomplete="off" value="<%= category.id %>"> <%= category.name %>
+      </label>
+    <% end %>
+    </div>
+    <input class="btn btn-default" name="commit" type="submit" value="Go find books" />
+  </form>
     
 </div>

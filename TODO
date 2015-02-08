@@ -11,11 +11,11 @@
 ## Backend TODO
 
 v Login system
-- Parent email
+? Parent email
 x Build Level system
 v Build Book and Category (many-to-many)
   - Categories are preference
-- Book Comments system
+v Book Comments system
 - Gamification system (points)
   - trigger time:
     - kid comments a book

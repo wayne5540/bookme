@@ -29,7 +29,7 @@ BookList.create([
 book_list_1 = BookList.first
 book_list_2 = BookList.last
 
-book_list_1.books.create([
+Book.create([
   {
     title: "Book1",
     description: "Book1",

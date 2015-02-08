@@ -19,4 +19,5 @@ end
 #  author      :string(255)
 #  created_at  :datetime
 #  updated_at  :datetime
+#  img_url     :string(255)
 #

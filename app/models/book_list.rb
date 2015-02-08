@@ -2,6 +2,8 @@ class BookList < ActiveRecord::Base
   belongs_to :user
   has_many :user_books, through: :user
   has_many :books, through: :user_books
+
+  scope :recent, -> { order("id DESC") }
 end
 
 # == Schema Information

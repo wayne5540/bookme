@@ -3,6 +3,11 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  has_many :book_lists
+
+  has_many :user_books
+  has_many :books, through: :user_books
 end
 
 # == Schema Information

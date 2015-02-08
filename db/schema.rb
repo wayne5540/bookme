@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150207235107) do
+ActiveRecord::Schema.define(version: 20150208004656) do
 
   create_table "book_book_lists", force: true do |t|
     t.integer  "book_list_id"
@@ -58,6 +58,18 @@ ActiveRecord::Schema.define(version: 20150207235107) do
 
   add_index "category_books", ["book_id"], name: "index_category_books_on_book_id"
   add_index "category_books", ["category_id"], name: "index_category_books_on_category_id"
+
+  create_table "reviews", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "book_id"
+    t.string   "title"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reviews", ["book_id"], name: "index_reviews_on_book_id"
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "user_books", force: true do |t|
     t.integer  "user_id"

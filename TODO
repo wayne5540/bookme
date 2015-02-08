@@ -8,15 +8,13 @@
 - User can add book into his/her book list (maybe at book page, add a add btn)
 
 
-## TODO
+## Backend TODO
 
 v Login system
-- Pare
-- Build Level system
-- Build Book and Category (many-to-many)
+- Parent email
+x Build Level system
+v Build Book and Category (many-to-many)
   - Categories are preference
-- BookList CRUD for user
-- Book page
 - Book Comments system
 - Gamification system (points)
   - trigger time:

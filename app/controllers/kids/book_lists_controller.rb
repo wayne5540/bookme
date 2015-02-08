@@ -4,6 +4,25 @@ class Kids::BookListsController < KidsBaseController
 
   def index
     @book_lists = current_user.book_lists.recent
+    # books = current_user.books
+    # user_preferences = current_user.preferences
+    # @available_books = []
+    # books.each do |book|
+    #   same_category = book.categories & user_preferences
+    #   if same_category.present?
+    #     @available_books << book
+    #   end
+    # end
+
+    @available_books = []
+    book_list_books_ids = current_user.book_list_books.pluck(:id)
+    books = Book.all
+    books.each do |book|
+      if book_list_books_ids.include?(book.id)
+        @available_books << book
+      end
+    end
+
     # render json: @book_lists, each_serializer: BookListSerializer
   end
 

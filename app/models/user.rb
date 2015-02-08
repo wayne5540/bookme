@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :book_lists
+  has_many :book_list_books, through: :book_lists, source: :books
+
   has_many :reviews
 
   has_many :user_books

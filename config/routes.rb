@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-
-  namespace :kids do
-  get 'levels/index'
-  end
-
   namespace :kids do
     root "book_lists#index"
 

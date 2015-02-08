@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :books do
       member do
         post :add_review
+        post :add_to_book_list
       end
       resources :reviews
     end

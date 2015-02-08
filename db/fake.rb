@@ -16,21 +16,21 @@ category_2 = Category.create(
   }
 )
 
-book_list_1 = BookList.create([
+book_list_1 = BookList.create(
   {
     title: "Wish to read",
     description: "Wish to read.",
     user_id: user.id
   }
-])
+)
 
-book_list_2 = BookList.create({
+book_list_2 = BookList.create(
   {
     title: "Reading",
     description: "Books I'm reading now.",
     user_id: user.id
   }
-})
+)
 
 book_1 = Book.create(
   {

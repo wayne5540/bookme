@@ -3,6 +3,11 @@ class Book < ActiveRecord::Base
   has_many :categories, through: :category_books
 
   has_many :user_books
+  has_many :users, through: :user_books
+
+  has_many :book_book_lists
+  has_many :book_lists, through: :book_book_lists
+
   has_many :reviews
 
   scope :available, ->(user_id) { includes(:user_books).where("user_books.user_id = ?", user_id).where("user_books.completed = ?", false) }

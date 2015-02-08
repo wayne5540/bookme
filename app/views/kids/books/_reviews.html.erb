@@ -1,0 +1,9 @@
+<% if !review.new_record? %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <%= review.comment %><br/>
+      -by <%= review.user.email %>
+    </div>
+  </div>
+<% end %>
+

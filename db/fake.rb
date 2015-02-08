@@ -32,11 +32,12 @@ book_list_2 = BookList.create({
   }
 })
 
-book_1 = Book.create([
+book_1 = Book.create(
   {
-    title: "Book1",
-    description: "Book1",
+    title: "Harry Potter",
+    description: "One of the famouse book.",
     isbn: "qwehfhqweofihw2e",
+    img_url: "http://img1.wikia.nocookie.net/__cb20070927074347/harrypotter/images/1/15/Hp7.jpg",
     author: "Wayne"
   }
 )

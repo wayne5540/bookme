@@ -1,13 +1,42 @@
-<div class="container">
+<div class="row">
   <div class="page-header">
-    <h1><%= @book.title %><small><%= @book.descripiton %></small></h1>
+    <h1><%= @book.title %><small> Author: <%= @book.author %></small></h1>
   </div>
 
-  <div class="col-md-4">
-    Book image here
+  <div class="col-md-6 offset3">
+    <div class="thumbnail">
+      <% if @book.img_url.present? %>
+        <%= image_tag(@book.img_url) %>
+      <% else %>
+        Sorry, No image available.
+      <% end %>
+      <div class="caption">
+        <h3><%= @book.title %></h3>
+        <p><%= @book.description %></p>
+
+        <p>
+          <%= link_to("Add to my booklist", "#", class: "btn btn-primary") %>
+        </p>
+
+        <p>
+          <%= simple_form_for(@review, url: add_review_kids_book_path(@book)) do |f| %>
+            <%= f.label :comment, "Review" %>
+            <%= f.input :comment, label: false %>
+            <%= f.submit "Save", :disable_with => 'Submiting...', :class => "btn btn-success" %>
+          <% end %>
+        </p>
+      </div>
+    </div>
   </div>
 
-  <div class="col-md-8">
-    Book details here
+  <div class="col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Reviews</h3>
+    </div>
+  </div>  
+
+  <div id="reviews-wrapper"></div>
+    <%= render partial: "reviews", collection: @reviews, as: :review %>
   </div>
 </div>

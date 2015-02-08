@@ -1,16 +1,27 @@
 <div class="row">
+  <h2>Pick subjects you like</h2>
+
   <% @categories.each do |category| %>
     <div class="col-xs-6 col-md-3">
-      <a href=<%= kids_levels_path %>>
-        <div class="thumbnail big-btn">
-          <span class="level-label"><%= category.name %></span>
-        </div>
-      </a>
+      <div class="thumbnail big-btn category-btn">
+        <span class="level-label"><%= category.name %></span>
+      </div>
     </div>
   <% end %>
+
 </div>
 <div class="row">
   <div class="col-md-12">
     <%= link_to("Go next >", kids_levels_path, class: "btn btn-default btn-lg pull-right") %>
   </div>
 </div>
+
+<script>
+  $(".category-btn").click(function(e){
+    if (!$(this).hasClass("check-box-like")) {
+      $(this).addClass("check-box-like");
+    } else {
+      $(this).removeClass("check-box-like");
+    };
+  })
+</script>

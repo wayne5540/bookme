@@ -6,7 +6,7 @@
   <div class="col-md-6 offset3">
     <div class="thumbnail">
       <% if @book.img_url.present? %>
-        <%= image_tag(@book.img_url) %>
+        <%= image_tag(@book.img_url, :style => "height: 300px;") %>
       <% else %>
         Sorry, No image available.
       <% end %>

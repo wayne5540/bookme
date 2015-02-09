@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 style="color:white;">Your Book Lists</h2>
+                    <h2 style="color:white;">Those books found you</h2>
                     <hr class="star-light">
                 </div>
             </div>
@@ -40,9 +40,8 @@
               <% @book_lists.each do |book_list| %>
                 <div class="col-lg-3">                   
                     <div class="list-group">
-                      <a class="list-group-item list-group-item-info active">
+                      <a class="list-group-item list-group-item-info" style="background-color: #796ab7; color: white;">
                         <h4 class="list-group-item-heading"><%= book_list.title %></h4>
-                        <p class="list-group-item-text"><%= book_list.description %></p>
                       </a>
                       <% book_list.books.each do |book| %>
                         <a href=<%= kids_book_path(book) %> class="list-group-item">
@@ -54,5 +53,11 @@
                 </div>
               <% end %>
             </div>
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <a href="#" class="btn btn-lg btn-default">
+                    <i class="fa fa-download"></i> Create New BookList
+                </a>
+            </div>
         </div>
+
     </section>

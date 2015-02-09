@@ -18,7 +18,7 @@ class Kids::BookListsController < KidsBaseController
     book_list_books_ids = current_user.book_list_books.pluck(:id)
     books = Book.all
     books.each do |book|
-      if book_list_books_ids.include?(book.id)
+      if !book_list_books_ids.include?(book.id)
         @available_books << book
       end
     end
